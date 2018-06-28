@@ -13,6 +13,8 @@
 		058F274A20BEE70300271381 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058F274920BEE70300271381 /* MapKit.framework */; };
 		641A0F0520BBDA36004ECC5A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A0F0420BBDA36004ECC5A /* DetailViewController.swift */; };
 		648FAC0520B29D5B00ACCE56 /* FoodStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648FAC0420B29D5B00ACCE56 /* FoodStoreTableViewCell.swift */; };
+		6EDF395620E4E65B002A1C7B /* musicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF395520E4E65B002A1C7B /* musicViewController.swift */; };
+		6EDF395820E4F7DE002A1C7B /* 01 Loving U (러빙유).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF395720E4F7DD002A1C7B /* 01 Loving U (러빙유).mp3 */; };
 		741C17E520AC061400FE6E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741C17E420AC061400FE6E1E /* AppDelegate.swift */; };
 		741C17EA20AC061400FE6E1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741C17E820AC061400FE6E1E /* Main.storyboard */; };
 		741C17EC20AC061400FE6E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741C17EB20AC061400FE6E1E /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		058F274920BEE70300271381 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		641A0F0420BBDA36004ECC5A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		648FAC0420B29D5B00ACCE56 /* FoodStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStoreTableViewCell.swift; sourceTree = "<group>"; };
+		6EDF395520E4E65B002A1C7B /* musicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicViewController.swift; sourceTree = "<group>"; };
+		6EDF395720E4F7DD002A1C7B /* 01 Loving U (러빙유).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01 Loving U (러빙유).mp3"; sourceTree = "<group>"; };
 		741C17E120AC061400FE6E1E /* UiTableViewController Test 02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UiTableViewController Test 02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		741C17E420AC061400FE6E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		741C17E920AC061400FE6E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		741C17E320AC061400FE6E1E /* UiTableViewController Test 02 */ = {
 			isa = PBXGroup;
 			children = (
+				6EDF395720E4F7DD002A1C7B /* 01 Loving U (러빙유).mp3 */,
 				741C17E420AC061400FE6E1E /* AppDelegate.swift */,
 				741C17E820AC061400FE6E1E /* Main.storyboard */,
 				0572C91520C26BB100B79406 /* MapTableViewCell.swift */,
@@ -87,6 +92,7 @@
 				741C17ED20AC061400FE6E1E /* LaunchScreen.storyboard */,
 				741C17F020AC061400FE6E1E /* Info.plist */,
 				0572C91720C2B39400B79406 /* TotalMapViewController.swift */,
+				6EDF395520E4E65B002A1C7B /* musicViewController.swift */,
 			);
 			path = "UiTableViewController Test 02";
 			sourceTree = "<group>";
@@ -150,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDF395820E4F7DE002A1C7B /* 01 Loving U (러빙유).mp3 in Resources */,
 				741C17EF20AC061400FE6E1E /* LaunchScreen.storyboard in Resources */,
 				741C17EC20AC061400FE6E1E /* Assets.xcassets in Resources */,
 				741C17EA20AC061400FE6E1E /* Main.storyboard in Resources */,
@@ -167,6 +174,7 @@
 				648FAC0520B29D5B00ACCE56 /* FoodStoreTableViewCell.swift in Sources */,
 				0572C91820C2B39400B79406 /* TotalMapViewController.swift in Sources */,
 				0572C91620C26BB100B79406 /* MapTableViewCell.swift in Sources */,
+				6EDF395620E4E65B002A1C7B /* musicViewController.swift in Sources */,
 				741C17F720AC06C400FE6E1E /* MyTableViewController.swift in Sources */,
 				058F274720BEE6CC00271381 /* MapViewController.swift in Sources */,
 				641A0F0520BBDA36004ECC5A /* DetailViewController.swift in Sources */,
