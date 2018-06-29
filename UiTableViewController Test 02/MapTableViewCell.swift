@@ -3,7 +3,7 @@
 //  UiTableViewController Test 02
 //
 //  Created by amadeus on 2018. 6. 2..
-//  Copyright © 2018년 lse. All rights reserved.
+//  Copyright © 2018년 황지성. All rights reserved.
 //
 
 import UIKit

@@ -5,10 +5,58 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Picker View Controller-->
+        <scene sceneID="7CC-J9-FA1">
+            <objects>
+                <viewController id="d6w-WE-Uby" customClass="PickerViewController" customModule="UiTableViewController_Test_02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AB6-iX-oY9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gku-bI-dE0">
+                                <rect key="frame" x="-16" y="145" width="391" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="d6w-WE-Uby" id="dIB-lq-dXg"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgx-q6-vTW">
+                                <rect key="frame" x="16" y="355" width="226" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ii8-gL-qcQ">
+                                <rect key="frame" x="0.0" y="432" width="375" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3l-mm-R3B">
+                                <rect key="frame" x="150" y="362" width="59" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="OA1-XH-Yuo"/>
+                    </view>
+                    <connections>
+                        <outlet property="imagerView" destination="ii8-gL-qcQ" id="Qji-9u-WuG"/>
+                        <outlet property="lblFN" destination="g3l-mm-R3B" id="S90-eU-NYq"/>
+                        <outlet property="pickerImage" destination="Gku-bI-dE0" id="zdp-QJ-GPO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wEM-UL-ZYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.79999999999995" y="-700.29985007496259"/>
+        </scene>
         <!--My Table View Controller-->
         <scene sceneID="lcF-Nd-bSY">
             <objects>
@@ -83,16 +131,30 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="fHx-4e-WvK">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="ZuD-7U-xdd">
-                            <connections>
-                                <segue destination="LUi-R4-f8O" kind="show" id="X6R-7J-Ozi"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Map" id="kxV-Wm-Hc0">
-                            <connections>
-                                <segue destination="7Tl-bp-4Uh" kind="show" identifier="totalMapView" id="fnn-kt-IWm"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="music" image="music" id="ZuD-7U-xdd">
+                                <connections>
+                                    <segue destination="LUi-R4-f8O" kind="show" id="X6R-7J-Ozi"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="image" image="image" id="wID-EQ-1lt">
+                                <connections>
+                                    <segue destination="d6w-WE-Uby" kind="show" id="aBK-hW-i6k"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="Map" id="kxV-Wm-Hc0">
+                                <connections>
+                                    <segue destination="7Tl-bp-4Uh" kind="show" identifier="totalMapView" id="fnn-kt-IWm"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="web" image="web" id="vQa-3H-59m">
+                                <connections>
+                                    <segue destination="cqd-CS-elf" kind="show" id="SZI-p8-Pz1"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="t0E-Bh-aqZ" id="Knc-zq-QP9"/>
@@ -225,6 +287,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="uSV-jo-r0p"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btPause" destination="swI-LO-GOH" id="Kol-xc-Udp"/>
                         <outlet property="btPlay" destination="gYa-Rg-icW" id="lR6-xj-5Nf"/>
@@ -374,8 +438,108 @@
             </objects>
             <point key="canvasLocation" x="192" y="60.26986506746627"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="h2E-gM-aDl">
+            <objects>
+                <viewController id="cqd-CS-elf" customClass="WebViewController" customModule="UiTableViewController_Test_02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f06-ly-dXL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n1o-Sf-QZX">
+                                <rect key="frame" x="16" y="64" width="282" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3C-xR-SgE">
+                                <rect key="frame" x="313" y="64" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="btGoUrl:" destination="cqd-CS-elf" eventType="touchUpInside" id="9Ob-GA-D8X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9R-Dp-Afz">
+                                <rect key="frame" x="16" y="102" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="site1"/>
+                                <connections>
+                                    <action selector="btGoS1:" destination="cqd-CS-elf" eventType="touchUpInside" id="vdO-3a-SFj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQJ-u6-omV">
+                                <rect key="frame" x="91" y="102" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="site2"/>
+                                <connections>
+                                    <action selector="btGos2:" destination="cqd-CS-elf" eventType="touchUpInside" id="smh-xs-ENk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82h-nA-qCI">
+                                <rect key="frame" x="191" y="102" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="html"/>
+                                <connections>
+                                    <action selector="btHtml:" destination="cqd-CS-elf" eventType="touchUpInside" id="4Kh-HL-JoP"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQm-Ky-W3M">
+                                <rect key="frame" x="16" y="140" width="343" height="468"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fzd-Qw-4La">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="RUa-9X-vUr">
+                                        <connections>
+                                            <action selector="btStop:" destination="cqd-CS-elf" id="ppA-tP-Dbu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="refresh" id="Rpw-7w-VGt">
+                                        <connections>
+                                            <action selector="btRefresh:" destination="cqd-CS-elf" id="fPQ-mu-c3C"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2lF-a0-xtM"/>
+                                    <barButtonItem systemItem="rewind" id="GzM-rh-8D3">
+                                        <connections>
+                                            <action selector="btRewind:" destination="cqd-CS-elf" id="0ji-Tt-wbB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="c7C-HP-PF4">
+                                        <connections>
+                                            <action selector="btForward:" destination="cqd-CS-elf" id="mtk-BK-AVj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1N7-9U-euC">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="we4-xI-BKg"/>
+                    </view>
+                    <connections>
+                        <outlet property="myActivity" destination="1N7-9U-euC" id="HIV-8C-NdY"/>
+                        <outlet property="myWeb" destination="PQm-Ky-W3M" id="P5V-va-AkQ"/>
+                        <outlet property="txtUrl" destination="n1o-Sf-QZX" id="VMW-ui-HaC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bv7-qo-rbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880.8" y="-803.74812593703155"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Map" width="25" height="25"/>
+        <image name="image" width="32" height="32"/>
+        <image name="music" width="32" height="32"/>
+        <image name="web" width="32" height="32"/>
     </resources>
 </document>
